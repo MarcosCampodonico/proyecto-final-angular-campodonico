@@ -1,0 +1,11 @@
+<div class="mb-5">
+  <button (click)="onCreateUser()" mat-flat-button color="warn" type="button">
+    <mat-icon>add</mat-icon>
+    añadir estudiante
+  </button>
+</div>
+<app-users-table
+  [dataSource]="(users | async) || []"
+  (deleteUser)="onDeleteUser($event)"
+  (editUser)="onEditUser($event)"
+></app-users-table>

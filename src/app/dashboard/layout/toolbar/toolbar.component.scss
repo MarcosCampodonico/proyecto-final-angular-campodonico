@@ -1,0 +1,11 @@
+.position-toolbar{
+    flex: 1 1 auto;
+}
+.rotate:hover{
+    cursor: pointer;
+    color:white;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transition: 0.5s;
+}
