@@ -11,11 +11,24 @@ import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
+import { PagoComponent } from './pages/pago/pago.component';
+import { PagesComponent } from './pages/pages.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
+import { CursosModule } from './pages/cursos/cursos.module';
+import { AlumnosComponent } from './pages/alumnos/alumnos.component';
+
+
 @NgModule({
   declarations: [
     DashboardComponent,
     NavMenuComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    PagoComponent,
+    PagesComponent,
+    CursosComponent,
+    AlumnosComponent,
+   
+    
   ],
   imports: [
     CommonModule,
@@ -27,6 +40,7 @@ import { ToolbarComponent } from './layout/toolbar/toolbar.component';
     HomeModule,
     RouterModule,
     UsersModule,
+    CursosModule,
   ],
   exports: [
     DashboardComponent

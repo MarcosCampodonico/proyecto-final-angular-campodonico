@@ -7,6 +7,8 @@ import { UsersComponent } from './dashboard/pages/users/users.component';
 import { UserDetailComponent } from './dashboard/pages/users/pages/user-detail/user-detail.component';
 import { LoginComponent } from './auth/pages/login/login.component';
 import { RegisterComponent } from './auth/pages/register/register.component';
+import { CursosComponent } from './dashboard/pages/cursos/cursos.component';
+import { AlumnosComponent } from './dashboard/pages/alumnos/alumnos.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,14 @@ const routes: Routes = [
         
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path: 'cursos',
+        component: CursosComponent, 
+      },
+      {
+        path: 'alumnos',
+        component: AlumnosComponent, 
       },
       {
         path: 'users',
