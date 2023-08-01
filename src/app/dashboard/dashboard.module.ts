@@ -13,8 +13,7 @@ import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { PagoComponent } from './pages/pago/pago.component';
 import { PagesComponent } from './pages/pages.component';
-import { CursosComponent } from './pages/cursos/cursos.component';
-import { CursosModule } from './pages/cursos/cursos.module';
+
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 
 
@@ -25,8 +24,8 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
     ToolbarComponent,
     PagoComponent,
     PagesComponent,
-    CursosComponent,
-    AlumnosComponent,
+
+    
    
     
   ],
@@ -40,7 +39,7 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
     HomeModule,
     RouterModule,
     UsersModule,
-    CursosModule,
+    
   ],
   exports: [
     DashboardComponent
