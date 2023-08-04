@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CreateUserData, UpdateUserData, User } from './models';
 import { BehaviorSubject, Observable, Subject, delay, map, of, take } from 'rxjs';
 import { NotifierService } from 'src/app/core/services/notifier.service';
+import { HttpClient } from '@angular/common/http';
 
 const USER_DB: Observable<User[]> = of([
   {
@@ -37,12 +38,18 @@ export class UserService {
   private _users$ = new BehaviorSubject<User[]>([]);
   private users$ = this._users$.asObservable();
 
-  constructor(private notifier: NotifierService) {}
+  constructor(private notifier: NotifierService, private httpClient:HttpClient) {}
 
   loadUsers(): void {
-    USER_DB.subscribe({
-      next: (usuariosFromDb) => this._users$.next(usuariosFromDb),
-    });
+    // USER_DB.subscribe({
+    //   next: (usuariosFromDb) => this._users$.next(usuariosFromDb),
+    // });
+    this.httpClient.get<User[]>('http://localhost:3000/users').subscribe({
+      next:(Response) =>{
+        console.log('RESPONSE', Response)
+        this._users$.next(Response);
+      }
+    })
   }
 
   getUsers(): Observable<User[]> {

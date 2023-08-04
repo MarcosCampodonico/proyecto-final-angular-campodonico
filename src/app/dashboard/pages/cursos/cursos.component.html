@@ -1,8 +1,8 @@
 <h1>Bienvenidos</h1>
-<p><b>En las siguientes cards encontrara los distintos cursos disponibles en la institucion</b></p>
+<p><b>En las siguiente tabla encontrara los distintos cursos disponibles en la institucion</b></p>
 <button mat-fab color="warn" aria-label="Example icon button with a home icon"><mat-icon>filter_list</mat-icon></button>
 
-<table mat-table [dataSource]="(data$ | async ) || []" class="mat-elevation-z8">
+<table mat-table [dataSource]="( data$ | async ) || []" class="mat-elevation-z8">
 
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID </th>

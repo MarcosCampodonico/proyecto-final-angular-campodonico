@@ -1,0 +1,58 @@
+{
+    "users":[
+        {
+            "id": 1,
+            "name": "Marcos",
+            "surname": "campodonico",
+            "email": "marcoscampodonico@outlook.com",
+            "linkedin":"marcoscamp",
+            "password": 123456
+          },
+          {
+            "id": 2,
+            "name": "luis",
+            "surname": "campodonico",
+            "email": "campodonicopef@mail.com",
+            "linkedin":"luiscamp",
+            "password": 123456
+          },
+          {
+            "id": 3,
+            "name": "johana",
+            "surname": "campodonico",
+            "email": "jmcamp@mail.com",
+            "linkedin":"johanacamp",
+            "password": 123456
+          }
+    ],
+    "cursos":[
+        {
+            "id":1,
+            "carrera": "Desarrollo Front-End",
+            "duracion": 1,
+            "modalidad": "virtual"
+        },
+        {
+            "id":2,
+            "carrera": "Data Scientist",
+            "duracion": 1,
+            "modalidad": "virtual"
+        },
+        {
+            "id":3,
+            "carrera": "Python",
+            "duracion": 1,
+            "modalidad": "virtual"
+        },
+        {
+            "id":4,
+            "carrera": "Desarrollo Full-stack",
+            "duracion": 2,
+            "modalidad": "virtual"
+        }
+    ],
+    "alumnos":[]
+
+
+
+}

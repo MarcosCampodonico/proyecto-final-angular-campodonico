@@ -1,6 +1,5 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,8 +11,9 @@ import { registerLocaleData } from '@angular/common';
 import { AuthModule } from './auth/auth.module';
 import { CursosModule } from './dashboard/pages/cursos/cursos.module';
 import { MatTableModule } from '@angular/material/table';
-
+import { HttpClientModule } from '@angular/common/http';
 registerLocaleData(eslocale);
+
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ registerLocaleData(eslocale);
     MatCardModule,
     CursosModule,
     MatTableModule,
+    HttpClientModule
   ],
   providers: [
     {
