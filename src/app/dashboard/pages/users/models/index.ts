@@ -5,6 +5,7 @@ export interface User {
   email: string;
   linkedin:string
   password: string;
+  token: string;
 }
 
 export interface CreateUserData {
@@ -13,6 +14,7 @@ export interface CreateUserData {
   email: string;
   linkedin: string,
   password: string;
+  token: string;
 }
 
 export interface UpdateUserData {
@@ -21,4 +23,5 @@ export interface UpdateUserData {
   email?: string;
   password?: string;
   linkedin?: string,
+  token: string;
 }

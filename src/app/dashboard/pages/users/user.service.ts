@@ -3,6 +3,7 @@ import { CreateUserData, UpdateUserData, User } from './models';
 import { BehaviorSubject, Observable, Subject, delay, map, of, take } from 'rxjs';
 import { NotifierService } from 'src/app/core/services/notifier.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 const USER_DB: Observable<User[]> = of([
   {
@@ -12,6 +13,7 @@ const USER_DB: Observable<User[]> = of([
     email: 'marcoscampodonico@outlook.com',
     linkedin:'marcoscamp',
     password: '123456',
+    token:"dasda22"
   },
   {
     id: 2,
@@ -20,6 +22,7 @@ const USER_DB: Observable<User[]> = of([
     email: 'campodonicopef@mail.com',
     linkedin:'luiscamp',
     password: '123456',
+    token:"dasda223"
   },
   {
     id: 3,
@@ -28,6 +31,7 @@ const USER_DB: Observable<User[]> = of([
     email: 'jmcamp@mail.com',
     linkedin:'johanacamp',
     password: '123456',
+    token:"dasda2244"
   }
 ]).pipe(delay(1000));
 
@@ -41,10 +45,7 @@ export class UserService {
   constructor(private notifier: NotifierService, private httpClient:HttpClient) {}
 
   loadUsers(): void {
-    // USER_DB.subscribe({
-    //   next: (usuariosFromDb) => this._users$.next(usuariosFromDb),
-    // });
-    this.httpClient.get<User[]>('http://localhost:3000/users').subscribe({
+    this.httpClient.get<User[]>(environment.baseApiUrl + '/users').subscribe({
       next:(Response) =>{
         console.log('RESPONSE', Response)
         this._users$.next(Response);
@@ -74,24 +75,32 @@ export class UserService {
   }
 
   updateUserById(id: number, usuarioActualizado: UpdateUserData): void {
-    this.users$.pipe(take(1)).subscribe({
-      next: (arrayActual) => {
-        this._users$.next(
-          arrayActual.map((u) =>
-            u.id === id ? { ...u, ...usuarioActualizado } : u
-          )
-        );
-        this.notifier.showSuccess('El usuario a sido modificado con exito');
-      },
-    });
+    // this.users$.pipe(take(1)).subscribe({
+    //   next: (arrayActual) => {
+    //     this._users$.next(
+    //       arrayActual.map((u) =>
+    //         u.id === id ? { ...u, ...usuarioActualizado } : u
+    //       )
+    //     );
+    //     this.notifier.showSuccess('El usuario a sido modificado con exito');
+    //   },
+    // });
+    this.httpClient.put(environment.baseApiUrl + '/users' + id, usuarioActualizado).subscribe({
+      next: ()=>this.loadUsers(),
+    })
   }
 
   deleteUserById(id: number): void {
-    this._users$.pipe(take(1)).subscribe({
-      next: (arrayActual) => {
-        this._users$.next(arrayActual.filter((u) => u.id !== id));
-        this.notifier.showSuccess('el usuario ha sido eliminado');
-      },
-    });
+    // this._users$.pipe(take(1)).subscribe({
+    //   next: (arrayActual) => {
+    //     this._users$.next(arrayActual.filter((u) => u.id !== id));
+    //     this.notifier.showSuccess('el usuario ha sido eliminado');
+    //   },
+    // });
+    this.httpClient.delete(environment.baseApiUrl +'/users/' + id).pipe(
+
+    ).subscribe({
+      next:(arrayActualizado) => this.loadUsers(),
+    })
   }
 }

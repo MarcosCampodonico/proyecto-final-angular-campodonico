@@ -11,70 +11,16 @@ import { CursosComponent } from './dashboard/pages/cursos/cursos.component';
 import { AlumnosComponent } from './dashboard/pages/alumnos/alumnos.component';
 
 const routes: Routes = [
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    children: [
-      {
-        
-        path: 'home',
-        component: HomeComponent,
-      },
-      {
-        path: 'cursos',
-        component: CursosComponent, 
-      },
-      {
-        path: 'alumnos',
-        component: AlumnosComponent, 
-      },
-      {
-        path: 'users',
-        children: [
-          {
-          
-            path: '',
-            component: UsersComponent,
-            data: {
-
-            }
-          },
-          {
-           
-            path: ':id',
-            component: UserDetailComponent
-          }
-        ]
-      },
-      {
-        path: '**',
-        redirectTo: 'home',
-      }
-    ],
-  },
-  {
-    path: 'auth',
-    component: AuthComponent,
-    children: [
-      {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
-        path: 'register',
-        component: RegisterComponent
-      },
-      {
-        path: '**',
-        redirectTo: 'login'
-      }
-    ]
-  },
-  {
-  
-    path: '**',
-    redirectTo: '/auth',
-  }
+{
+  path: 'dashboard',
+  component: DashboardComponent,
+  loadChildren: ()=> import('./dashboard/dashboard.module').then((typescriptModule)=>typescriptModule.DashboardModule)
+},
+{ 
+  path: 'auth',
+  component: AuthComponent,
+  loadChildren: ()=>import('./auth/auth.module').then((typescriptModule)=>typescriptModule.AuthModule)
+},
 ];
 
 @NgModule({

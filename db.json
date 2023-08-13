@@ -6,7 +6,8 @@
             "surname": "campodonico",
             "email": "marcoscampodonico@outlook.com",
             "linkedin":"marcoscamp",
-            "password": 123456
+            "password": "123456",
+            "token":"iiiii2021"
           },
           {
             "id": 2,
@@ -14,7 +15,8 @@
             "surname": "campodonico",
             "email": "campodonicopef@mail.com",
             "linkedin":"luiscamp",
-            "password": 123456
+            "password": 123456,
+            "token":"oooo2022"
           },
           {
             "id": 3,
@@ -22,7 +24,8 @@
             "surname": "campodonico",
             "email": "jmcamp@mail.com",
             "linkedin":"johanacamp",
-            "password": 123456
+            "password": 123456,
+            "token":"pppp2023"
           }
     ],
     "cursos":[

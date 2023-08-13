@@ -23,8 +23,8 @@ registerLocaleData(eslocale);
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DashboardModule, // dashboard module
-    AuthModule, // auth module
+    DashboardModule, 
+    AuthModule, 
     MatCardModule,
     CursosModule,
     MatTableModule,

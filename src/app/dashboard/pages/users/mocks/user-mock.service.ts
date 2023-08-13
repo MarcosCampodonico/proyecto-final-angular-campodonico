@@ -9,6 +9,7 @@ export class UserMockService {
       email: 'fake@mail.com',
       linkedin:'fakelinkedind',
       password: '123456',
+      token: 'bcg2224mec'
     },
   ];
   getUsers(): User[] {

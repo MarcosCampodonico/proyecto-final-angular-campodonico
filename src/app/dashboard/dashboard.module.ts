@@ -15,6 +15,7 @@ import { PagoComponent } from './pages/pago/pago.component';
 import { PagesComponent } from './pages/pages.component';
 
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
     HomeModule,
     RouterModule,
     UsersModule,
+    DashboardRoutingModule
     
   ],
   exports: [
